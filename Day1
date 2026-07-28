@@ -1,6 +1,5 @@
+1.
 // output should print as                   cse "KARE" students
-
-
 public class Main
 {
 	public static void main(String[] args) {
@@ -9,15 +8,12 @@ public class Main
 	}
 }
 
-
 Output:
 cse "KARE" students
 \
 
-
-
+2.
 // output should print as                   \n
-
 
 public class Main
 {
@@ -28,3 +24,5 @@ public class Main
 
 Output:
 \n
+
+3.
