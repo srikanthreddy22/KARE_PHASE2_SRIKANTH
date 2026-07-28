@@ -82,3 +82,23 @@ Enter the Character
 f
 the entered Character is f
 
+
+6.
+// program to get a float digit from user and print it to the 2 decimal points
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the float ");
+        float n = sc.nextFloat();
+        System.out.printf("%.2f",n);
+    }
+}
+
+Output:
+Enter the float 
+5.666
+5.67
+
+7.
