@@ -1,0 +1,14 @@
+
+
+
+// output should print as                   cse "KARE" students
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("cse \"KARE\" students");
+		System.out.print("\\");
+	}
+}
+
