@@ -26,3 +26,20 @@ Output:
 \n
 
 3.
+// Take the input from the user and the print the same number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int n = sc.nextInt();
+		System.out.println(n);
+	}
+}
+
+Output:
+Enter the number
+10
+10
+
