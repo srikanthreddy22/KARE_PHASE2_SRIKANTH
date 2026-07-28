@@ -13,3 +13,18 @@ public class Main
 Output:
 cse "KARE" students
 \
+
+
+
+// output should print as                   \n
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.print("\\n");
+	}
+}
+
+Output:
+\n
