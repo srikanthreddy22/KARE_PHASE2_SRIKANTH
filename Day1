@@ -43,3 +43,42 @@ Enter the number
 10
 10
 
+4.
+// program to get a float value from the user and print the float number
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the float digit");
+        float a = sc.nextFloat();
+        System.out.println("the entered Float number is "+ a);
+        
+    }
+}
+
+Output:
+Enter the float digit
+5.666
+the entered Float number is 5.666
+
+
+5.
+// program to get a character from the user and print the charcater
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Character");
+        char a = sc.next().charAt(0);
+        System.out.println("the entered Character is "+ a);
+        
+    }
+}
+
+Output:
+Enter the Character
+f
+the entered Character is f
+
