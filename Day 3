@@ -74,3 +74,44 @@ Enter  two numbers 5
 8
 Enter the operation9 -
 -3
+
+// program to print n Natural Numbers
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.print("enter the number");
+	    int n = sc.nextInt();
+	    for (int i=1;i<=n;i++){
+	        System.out.print(i+" ");
+	    }
+	}
+}
+
+Output:
+enter the number6
+1 2 3 4 5 6 
+
+//  program to get the starting and the ending range and find the sum of the 
+// elemnets in the given range
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.print("enter the intial and final number");
+	    int s = sc.nextInt();
+	    int f = sc.nextInt();
+	    int sum=0;
+	    for (int i=s;i<=f;i++){
+	        sum+=i;
+	    }
+	    System.out.print("the sum of the numbers between the range "+ s + " and "+ f + " is : " + sum);
+	}
+}
+
+Output:
+enter the intial and final number5
+11
+the sum of the numbers between the range 5 and 11 is : 56
