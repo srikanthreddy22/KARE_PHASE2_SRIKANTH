@@ -1,1 +1,122 @@
+// To print the output including "".
+public class Main{
+    public static void main(String args[]){
+        System.out.println("cse \"KARE\" students");
+    }
+}
 
+Output:
+cse "KARE" students
+
+
+// To print the output as \n.
+public class Main{
+    public static void main(String args[]){
+        System.out.print("\\n");
+    }
+}
+
+Output:
+\n
+
+
+//Take the input from user and print the same.
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n = sc.nextInt();
+        System.out.println(n);
+    }
+}
+
+Output:
+Enter the number:
+4
+4
+
+
+//Take the float value as input from the user
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the float value:");
+        float f = sc.nextFloat();
+        System.out.println(f);
+    }
+}
+
+Output:
+Enter the float value:
+10.5
+10.5
+
+
+// Take the character as input from the user
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the float value:");
+        char c= sc.next().charAt(0);
+        System.out.println(c);
+    }
+}
+
+Output:
+Enter the float value:
+a
+a
+
+
+//program to print the float value with 2 decimals
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the float value:");
+        float n = sc.nextFloat();
+        System.out.printf("%.2f",n);
+    }
+}
+
+Output:
+Enter the float value:
+100.9182
+100.92
+
+
+// program to get a double input from user and print it.
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the float value:");
+        double d= sc.nextDouble();
+        System.out.print(d);
+    }
+}
+
+Output:
+Enter the float value:
+100.91821
+100.91821
+
+
+// Program for AND, OR and XOR operation
+public class Main{
+    public static void main(String args[]){
+        int a=5;
+        int b=3;
+        System.out.println("The AND operation between a and b is : "+(a&b));
+        System.out.println("The OR operation between a and b is : "+(a|b));
+        System.out.println("The XOR operation between a and b is : "+(a^b));
+    }
+}
+
+Output:
+The AND operation between a and b is : 1
+The OR operation between a and b is : 7
+The XOR operation between a and b is : 6
