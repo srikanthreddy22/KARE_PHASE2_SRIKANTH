@@ -115,3 +115,76 @@ Output:
 enter the intial and final number5
 11
 the sum of the numbers between the range 5 and 11 is : 56
+
+
+//  program to find the factors of given number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.print("enter the number");
+	    int n = sc.nextInt();
+	    for (int i=1;i<=n/2;i++){
+	        if(n%i == 0){
+	            System.out.print(i + " ");
+	        }
+	    }
+	    System.out.print(n);
+	}
+}
+
+
+Output:
+enter the number6
+1 2 3 6
+
+//  program to find the factorial of a given number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("enter the number");
+		int n = sc.nextInt();
+		int fact=1;
+		if(n==0||n==1) {
+			fact = 1;
+		}
+
+		else {
+			for (int i=1; i<=n; i++) {
+				fact*=i;
+			}
+		}
+		System.out.print(fact);
+	}
+}
+
+//  program to find the factorial of a given number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("enter the number");
+		int n = sc.nextInt();
+		int fact=1;
+		if(n==0||n==1) {
+			fact = 1;
+		}
+
+		else {
+			for (int i=1; i<=n; i++) {
+				fact*=i;
+			}
+		}
+		System.out.print(fact);
+	}
+}
+
+
+Output:
+enter the number5
+120
+
