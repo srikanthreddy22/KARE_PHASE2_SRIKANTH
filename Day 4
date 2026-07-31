@@ -221,6 +221,46 @@ Output:
 **** ****
 **********
 
+// program to print Base 4 Pattern 
+// i/p        o/p
+//5                                  
+//           *        *         
+//           **      **
+//           ***    ***
+//           ****  ****
+//           **********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int row = 0; row < n; row++) {
+            for (int col = 0; col <=row ; col++) {
+                System.out.print("*");
+            }
+            for (int col = 0; col <n-row-1 ; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 0; col <n-row-1; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 0; col <=row; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Output:
+5
+*        *
+**      **
+***    ***
+****  ****
+**********
+
 
 
 
