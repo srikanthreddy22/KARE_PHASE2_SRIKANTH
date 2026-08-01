@@ -96,3 +96,47 @@ Enter the no of lines
  * * * * 
 * * * * * 
 
+
+// program to print the following pattern
+// i/p 5
+
+// 10101
+// 01010
+// 10101
+// 01010   
+// 10101    
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the no of lines");;
+		int n = sc.nextInt();
+		int row,col;
+		for (row=0;row<n;row++){
+		    for(col=0;col<n;col++){
+		        if( (col+row) % 2 ==0){
+		            System.out.print("1");
+		        }
+		        else{
+		            System.out.print("0");
+		        }
+		  
+		    
+		}
+		System.out.println();
+		}
+	}
+}
+
+Output:
+Enter the no of lines
+5
+10101
+01010
+10101
+01010
+10101
+
