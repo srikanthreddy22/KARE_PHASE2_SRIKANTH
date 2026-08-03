@@ -1,0 +1,133 @@
+// write a java program to count and print the no of odd and even digits in a number
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.print("for the number " + n  );
+    
+        int even=0,odd=0,r;
+        while(n!=0){
+            r = n%10;
+            if(r%2==0){
+                even +=1;
+                
+            }
+            else{
+                odd +=1;
+            }
+            n = n/10;
+        }
+        System.out.print(" number of even digits are   " + even + " number of odd digits are " + odd );
+    }
+}
+
+Output:
+456789456
+for the number 456789456 number of even digits are   5 number of odd digits are 4
+
+
+// write a java program to count the  prine digits in the given number
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.print("for the number " + n  );
+    
+        int prime=0,i,r;
+        while(n!=0){
+            r = n%10;
+            if (r == 2 || r == 3 || r == 5 || r == 7) {
+                prime++;
+            }
+            n = n/10;
+        }
+        System.out.print(" number of prime digits are   " + prime  );
+    }
+}
+
+Output:
+123456789
+for the number 123456789 number of prime digits are   4
+
+
+// write a java program to reverse the number without using the right side formation
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int r;
+        System.out.print("for the number " + n + " the reverse number is " );
+        while(n!=0){
+            r = n%10;
+            System.out.print(r);
+            n = n/10;
+        }
+    }
+}
+Output:
+123
+for the number 123 the reverse number is 321
+
+
+// write a java program to check whether the given number is palindrome number
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n;
+        int r,rev=0;
+        while(n!=0){
+            r = n%10;
+            rev=rev*10 + r;
+            n = n/10;
+        }
+        if(temp == rev){
+            System.out.print("the given number is a palindrome");
+        }
+        else{
+            System.out.print("the given numebr is not a palindrome");
+        }
+    }
+}
+Output:
+
+121
+the given number is a palindrome
+
+
+// write a java program to print the palindrome numbers in the given range of the number
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int  i;
+        
+        for(i=1;i<=n;i++){
+        int temp = i;
+        int r,rev=0;
+        while(temp!=0){
+            r = temp%10;
+            rev=rev*10 + r;
+            temp = temp/10;
+        }
+        if(i == rev){
+            System.out.print(i + " ");
+        }
+    }
+    
+}
+}
+
+Output:
+100
+1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99 
