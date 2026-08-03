@@ -133,7 +133,7 @@ Output:
 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99 
 
 
-// write a program to check whether the given number is harshatt number or not
+// write a program to check whether the given number is harshadd number or not
 import java.util.*;
 public class Main{
     public static void main(String[] args){
@@ -147,10 +147,10 @@ public class Main{
             n = n/10;
         }
         if(temp%s == 0){
-            System.out.print("Harshatt number");
+            System.out.print("Harshadd number");
         }
         else{
-            System.out.print("Not a Harshatt NUmber");
+            System.out.print("Not a Harshadd NUmber");
         }
     }
 }
@@ -158,4 +158,4 @@ public class Main{
 
 Output:
 18
-Harshatt number
+Harshadd number
