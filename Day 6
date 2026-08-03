@@ -131,3 +131,31 @@ public class Main{
 Output:
 100
 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99 
+
+
+// write a program to check whether the given number is harshatt number or not
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n,r;
+        int s=0;
+        while(n!=0){
+            r = n%10;
+            s+=r;
+            n = n/10;
+        }
+        if(temp%s == 0){
+            System.out.print("Harshatt number");
+        }
+        else{
+            System.out.print("Not a Harshatt NUmber");
+        }
+    }
+}
+
+
+Output:
+18
+Harshatt number
