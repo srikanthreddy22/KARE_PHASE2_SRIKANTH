@@ -159,3 +159,33 @@ public class Main{
 Output:
 18
 Harshadd number
+
+
+// write a program to check whether the given number is neon number or not
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sq = n*n;
+        int s=0,r;
+        while(sq!=0){
+            r = sq%10;
+            s+=r;
+            sq = sq/10;
+        }
+        if(n == s){
+            System.out.print("Neon number");
+        }
+        else{
+            System.out.print("Not a Neon NUmber");
+        }
+    }
+}
+
+Output:
+5
+Not a Neon NUmber
+
+9
+Neon number
