@@ -189,3 +189,30 @@ Not a Neon NUmber
 
 9
 Neon number
+
+
+// write a program to check whether the given number is neon number or not
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i,s=0;
+        for(i=1;i<n;i++){
+            if(n%i == 0){
+                s+=i;
+            }
+        }
+        if(n == s){
+            System.out.print("Perfect number");
+        }
+        else{
+            System.out.print("Not a perfect NUmber");
+        }
+    }
+}
+Output:
+6
+Perfect number
+5
+Not a perfect NUmber
