@@ -137,3 +137,44 @@ Enter a number: 13
 
 Enter a number: 14
 14 is NOT an Adam Number
+
+
+//write a java program to check whether the given pair of numbers are amicable pair or not 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter 1st  number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter 2nd  number: ");
+        int num2 = sc.nextInt();
+        int s1=0,s2=0;
+        int i;
+        for (i=1;i<num1;i++){
+            if(num1%i == 0){
+                s1+=i;
+            }
+        }
+        for (i=1;i<num2;i++){
+            if(num2%i == 0){
+                s2+=i;
+            }
+        }
+        if (s1 == num2 && s2 == num1) {
+            System.out.println( "the given pair of numbers  is an Amicable Pair");
+        }
+        else {
+            System.out.println("the given pair of numbers is not an Amicable Pair");
+        }
+    }
+}
+
+Output:
+Enter 1st  number: 220
+Enter 2nd  number: 284
+the given pair of numbers  is an Amicable Pair
+
+
+Enter 1st  number: 22
+Enter 2nd  number: 44
+the given pair of numbers is not an Amicable Pair
