@@ -191,7 +191,7 @@ Not a Neon NUmber
 Neon number
 
 
-// write a program to check whether the given number is neon number or not
+// write a program to check whether the given number is a perfect number or not
 import java.util.*;
 public class Main{
     public static void main(String[] args){
