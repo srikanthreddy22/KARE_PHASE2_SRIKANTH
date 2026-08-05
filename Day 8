@@ -91,3 +91,52 @@ Output:
 5
 Even count 2
 Odd Count 3
+
+
+//write a java program to find the odd even element count ni the given array
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the size of the array");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i = 0;
+
+		for(i=0;i<n;i++){
+		    System.out.print("Enter the " + i + "th index value");
+		    arr[i]  = sc.nextInt();
+		}
+		
+		
+		System.out.println("Before change");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		System.out.println("Enter the index position you would like to change");;
+		int idx = sc.nextInt();
+		System.out.print("Enter the Value");
+		int val = sc.nextInt();
+		arr[idx-1] = val;
+		System.out.print("after change");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		
+}
+}
+
+Output:
+Enter the size of the array5
+Enter the 0th index value1
+Enter the 1th index value2
+Enter the 2th index value3
+Enter the 3th index value4
+Enter the 4th index value5
+Before change
+1 2 3 4 5
+Enter the index position you would like to change
+3
+Enter the Value40
+after change1 2 40 4 5 
