@@ -185,3 +185,50 @@ the given array is
 1 2 3 4 5
 Enter the Value you would like to find in the array 4
 The value 4 is present at the index 3
+
+
+// Write a java program to implement the linear Search and find the value in teh given array
+// i/p 
+// 5
+// 10 20 30 40 50
+
+// o/p 
+// 50 40 30 20 10
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the size of the array");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i = 0;
+		for(i=0;i<n;i++){
+		    System.out.print("Enter the " + i + "th index value");
+		    arr[i]  = sc.nextInt();
+		}
+		System.out.println(" the given array is ");
+		for (i = 0; i < n / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
+        }
+		    
+		System.out.print("After change");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+	
+	}
+}
+
+Output:
+Enter the size of the array6
+Enter the 0th index value1
+Enter the 1th index value2
+Enter the 2th index value3
+Enter the 3th index value4
+Enter the 4th index value5
+Enter the 5th index value6
+ the given array is 
+After change6 5 4 3 2 1 
