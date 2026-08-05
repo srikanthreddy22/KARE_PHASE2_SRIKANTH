@@ -140,3 +140,48 @@ Enter the index position you would like to change
 3
 Enter the Value40
 after change1 2 40 4 5 
+
+
+// Write a java program to implement the linear Search and find the value in teh given array
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the size of the array");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i = 0;
+		for(i=0;i<n;i++){
+		    System.out.print("Enter the " + i + "th index value");
+		    arr[i]  = sc.nextInt();
+		}
+		System.out.println(" the given array is ");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		System.out.print("Enter the Value you would like to find in the array");
+		int val = sc.nextInt();
+		int flag = 0;
+		for(i=0;i<n;i++){
+		    if(arr[i] == val){
+		        System.out.print("The value " + val + " is present at the index " + i);
+		        flag+=1;		    }
+		}
+		if(flag == 0){
+		    System.out.print("the number is not present in the array");
+		}
+	}
+}
+
+Output:
+Enter the size of the array5
+Enter the 0th index value1
+Enter the 1th index value2
+Enter the 2th index value3
+Enter the 3th index value4
+Enter the 4th index value5
+the given array is 
+1 2 3 4 5
+Enter the Value you would like to find in the array 4
+The value 4 is present at the index 3
