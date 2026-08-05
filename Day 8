@@ -232,3 +232,59 @@ Enter the 4th index value5
 Enter the 5th index value6
  the given array is 
 After change6 5 4 3 2 1 
+
+
+// Write a java program to implement the linear Search and find the value in the given array using the while loop
+// i/p 
+// 5
+// 10 20 30 40 50
+
+// o/p 
+// 50 40 30 20 10
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the size of the array");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i = 0;
+		for(i=0;i<n;i++){
+		    System.out.print("Enter the " + i + "th index value");
+		    arr[i]  = sc.nextInt();
+		}
+		System.out.println(" the given array is ");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		int temp=0;
+		int si=0,li=n-1;
+		while(si<li) {
+        temp = arr[si];
+        arr[si] = arr[li];
+        arr[li] = temp;
+        si++;
+        li--;
+        }
+		    
+		System.out.println("After change");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+	
+	}
+}
+
+Output:
+Enter the size of the array5
+Enter the 0th index value1
+Enter the 1th index value2
+Enter the 2th index value3
+Enter the 3th index value4
+Enter the 4th index value5
+ the given array is 
+1 2 3 4 5 
+After change
+5 4 3 2 1 
