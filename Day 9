@@ -155,3 +155,38 @@ Output:
 33
 4477
  the second max value is 88
+
+
+// write a java program to print the min element in the array
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int i;
+        for (i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int mx = Integer.MAX_VALUE;
+        for (i = 0; i < n; i++) {
+            if(arr[i]< mx ){
+                mx = arr[i];
+            }
+        
+        }
+        System.out.println(" the min value is "+mx);
+    }
+}
+
+Output:
+8
+1
+5
+2
+3
+-9
+6
+5
+6
+ the min value is -9
