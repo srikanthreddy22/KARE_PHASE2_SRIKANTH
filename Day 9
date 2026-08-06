@@ -82,3 +82,76 @@ Output:
 44
 111
 456
+
+// write a java program to print the second max element in the array
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int i;
+        int mx = Integer.MIN_VALUE;
+        for (i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            if (arr[i] > mx) {
+                mx = arr[i];
+            }
+        }
+        for (i = 0; i < n; i++) {
+            if (arr[i] == mx) {
+                arr[i] = 0;
+            }
+        }
+        int secondMx = Integer.MIN_VALUE;
+        for (i = 0; i < n; i++) {
+            if (arr[i] > secondMx) {
+                secondMx = arr[i];
+            }
+        }
+        System.out.println(" the second max value is "+secondMx);
+    }
+}
+Output:
+5
+1
+2
+3
+4
+5
+ the second max value is 4
+
+// write a java program to print the second max element in the array
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int i;
+        for (i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int mx = Integer.MIN_VALUE;
+        int smx = Integer.MIN_VALUE;
+        for (i = 0; i < n; i++) {
+            if(arr[i]> mx ){
+                smx = mx;
+                mx = arr[i];
+            }
+            else if (arr[i]>smx){
+                smx = arr[i];
+            }
+        }
+        System.out.println(" the second max value is "+smx);
+    }
+}
+
+Output:
+5
+88
+66
+22
+33
+4477
+ the second max value is 88
