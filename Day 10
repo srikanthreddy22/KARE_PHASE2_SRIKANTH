@@ -99,6 +99,15 @@ the given array is
 The sum of the elements of the given array is 45
 
 // write a java program to print the primary and secondary diagonal elements
+//i/p 3
+// 1 2 3 
+// 4 5 6
+// 7 8 9
+// o/p 
+// The primary diagonal elements are 
+//  1 5 6
+// the secondary diagonal elements are 
+// 3 5 7
 import java.util.*;
 public class Main
 {
