@@ -389,3 +389,31 @@ public class Main{
 Output:
 appllee
 e l p 
+
+
+// write a java program to take string as input and print the no of frequency of each elemtn
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int arr[] = new int[256];
+        for(char ch:s.toCharArray()){
+            arr[ch]+=1;
+        }
+        int count=0;
+
+        for(int i=0;i<256;i++){
+            if(arr[i]>0){
+                System.out.println((char)i+" " + arr[i]);
+            }
+        }
+    }
+}
+
+Output:
+apple
+a 1
+e 1
+l 1
+p 2
