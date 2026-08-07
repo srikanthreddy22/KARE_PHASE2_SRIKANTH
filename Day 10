@@ -317,3 +317,75 @@ Not a Palindrome string
 mam
 mam
 Palindrome string
+
+
+// write a java program to take string as input and print the no of distinct elements in the string
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int arr[] = new int[256];
+        for(char ch:s.toCharArray()){
+            arr[ch]+=1;
+        }
+        int count=0;
+        for(int i=0;i<256;i++){
+            if(arr[i] == 1){
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
+Output:
+apple
+3
+
+// write a java program to take string as input and print the no of duplicate element count in the string
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int arr[] = new int[256];
+        for(char ch:s.toCharArray()){
+            arr[ch]+=1;
+        }
+        int count=0;
+        for(int i=0;i<256;i++){
+            if(arr[i] > 1){
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
+
+Output:
+saregama
+1
+
+// write a java program to take string as input and print the no of element which occurred exactly twice
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int arr[] = new int[256];
+        for(char ch:s.toCharArray()){
+            arr[ch]+=1;
+        }
+        int count=0;
+
+        for(int i=0;i<256;i++){
+            if(arr[i] == 2){
+                System.out.print((char)i+" ");
+            }
+        }
+    }
+}
+
+Output:
+appllee
+e l p 
