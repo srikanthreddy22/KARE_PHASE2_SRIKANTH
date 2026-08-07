@@ -238,3 +238,50 @@ the transpose matrix is
 1 4 
 2 5 
 3 6 
+
+
+// write a java program to print the vowel count in the string
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine().toLowerCase();
+		int ec=0;
+		for (char ch:s.toCharArray()){
+		    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+		        ec++;
+		    }
+		}
+		System.out.print("vowel count :"+ec);
+	}
+}
+
+Output:
+hii i am srikathkanth
+vowel count :7
+
+// write a java program to reverse the given string
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		char ch[] = str.toCharArray();
+		int s=0;
+		int e=str.length()-1;
+		while(s<e){
+		    char temp = ch[s];
+		    ch[s] = ch[e];
+		    ch[e] = temp;
+		    s++;
+		    e--;
+		}
+		System.out.println(new String(ch)); 
+	}
+}
+
+Output:
+srikanth
+htnakirs
