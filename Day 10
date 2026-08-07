@@ -174,3 +174,67 @@ The primary diagonal elements are
 1 5 9 
 The secondary diagonal elements are
 3 5 7 
+
+
+// write a java program to transpose the matrix
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the row and col the matrix");
+		int r =sc.nextInt();
+		int c =sc.nextInt();
+		int arr[][] = new int[r][c];
+		int tp[][] = new int[c][r];
+		int sum=0;
+		System.out.println("Enter the elements into the array");
+		int i,j;
+		for(i=0;i<r;i++){
+		    for(j=0;j<c;j++){
+		        arr[i][j] = sc.nextInt();
+		    }
+		}
+		
+		System.out.println("the given array is ");
+		for(i=0;i<r;i++){
+		    for(j=0;j<c;j++){
+		        System.out.print(arr[i][j] + " ");
+		    }
+		    System.out.println();
+		}
+		for(i=0;i<r;i++){
+		    for(j=0;j<c;j++){
+		        tp[j][i] = arr[i][j];
+		    }
+		}
+		System.out.println();
+		System.out.println("the transpose matrix is ");
+		for(i=0;i<c;i++){
+		    for(j=0;j<r;j++){
+		        System.out.print(tp[i][j] + " ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+Output:
+Enter the row and col the matrix
+2
+3
+Enter the elements into the array
+1
+2
+3
+4
+5
+6
+the given array is 
+1 2 3 
+4 5 6 
+
+the transpose matrix is 
+1 4 
+2 5 
+3 6 
