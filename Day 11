@@ -48,3 +48,54 @@ Output:
 the given array of elements are 10 20 30 69 25 47 
 Enter the target element  47
 The target is present at the position  5
+
+
+// write a java program to implement the bubble sort
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i;
+		for(i=0;i<n;i++){
+		    arr[i] = sc.nextInt();
+		}
+		System.out.print("the given array of elements are ");
+		System.out.println();
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		int j=0,temp=0;
+		for(i=0;i<n;i++){
+		    for(j=0;j<n-i-1;j++){
+		        if(arr[j]>arr[j+1]){
+		            temp = arr[j];
+		            arr[j] = arr[j+1];
+		            arr[j+1] = temp;
+		        }
+		    }
+		}
+		System.out.println();
+		System.out.println("The sorted list is");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+	}
+}
+
+Output:  8
+15
+3
+6
+45
+9
+75
+64
+51
+
+the given array of elements are 
+15 3 6 45 9 75 64 51 
+The sorted list is
+3 6 9 15 45 51 64 75 
