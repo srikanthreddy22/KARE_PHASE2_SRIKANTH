@@ -99,3 +99,90 @@ the given array of elements are
 15 3 6 45 9 75 64 51 
 The sorted list is
 3 6 9 15 45 51 64 75 
+
+// write a java program to implement the selection sort
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i,j,minind;
+		for(i=0;i<n;i++){
+		    arr[i] = sc.nextInt();
+		}
+		System.out.print("the given array of elements are ");
+		System.out.println();
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		for(i=0;i<n-1;i++){
+		    minind = i;
+		    for(j=i+1;j<n;j++)
+		    {
+		        if(arr[j]<arr[minind])
+		        minind =j;
+		    }
+		    int temp = arr[i];
+		    arr[i] = arr[minind];
+		    arr[minind] = temp;
+		}
+		System.out.println();
+		System.out.println("The sorted list is");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+	}
+}
+
+Output:
+5
+5 250 1 4 5 
+the given array of elements are 
+5 250 1 4 5 
+The sorted list is
+1 4 5 5 250 
+
+// write a java program to implement the selection sort
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int i;
+		for(i=0;i<n;i++){
+		    arr[i] = sc.nextInt();
+		}
+		System.out.print("the given array of elements are ");
+		System.out.println();
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		for(i=1;i<n;i++){
+		    int key = arr[i];
+		    int j = i-1;
+		    while (j>=0 && arr[j]>key)
+		    {
+		        arr[j+1] = arr[j];
+		        j--;
+		    }
+		    arr[j+1] = key;
+		}
+		System.out.println();
+		System.out.println("The sorted list is");
+		for(i=0;i<n;i++){
+		    System.out.print(arr[i]+" ");
+		}
+	}
+}
+
+Output:
+5
+1 2 36 1 58
+the given array of elements are 
+1 2 36 1 58 
+The sorted list is
+1 1 2 36 58 
