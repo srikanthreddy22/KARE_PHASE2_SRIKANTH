@@ -362,4 +362,45 @@ public static void main(String[] args){
 Output:
 8
 1 2 3 4 5 6 7 8 
- 
+
+
+// Linear Recursion
+import java.util.*;
+public class Main{
+    static int factorial(int n){
+        int fact =1;
+        if(n==0 || n==1){
+            fact =1;
+            }
+        else{
+            fact = n*factorial(n-1);
+            }
+        return fact;
+    }
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int num = sc.nextInt();
+    int res = factorial(num);
+    System.out.print(res);
+    }
+}
+
+Output:
+6
+720
+
+// Linear Recursion
+import java.util.*;
+public class Main{
+    static int factorial(int n){
+        if(n==0 || n==1)
+        return 1;
+        return n*factorial(n-1);
+    }
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int num = sc.nextInt();
+    int res = factorial(num);
+    System.out.print(res);
+    }
+}
