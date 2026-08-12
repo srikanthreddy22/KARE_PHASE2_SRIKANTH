@@ -51,3 +51,58 @@ Gold
 Money
 silver
 Gold
+
+
+//function with no arguments and with return type
+// syntax
+//returntype functionname(){
+//     set of statements
+//     return 
+// }
+
+// write a java program to check whether the given number is a automorphic number
+// 1. get the input from the User 
+// 2. find the square of the given value
+// 3. to count the no of digits in the given number
+// 4. power = pow(10,count)
+// 5.sqr%power == n 
+// 6.sqr%power == n:
+//     print("automorphic")
+// 7.else:
+//     print(:NOt a automorphic)
+
+import java.util.*;
+public class Main{
+public boolean CheckAutomorphic(){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int temp = n;
+    int count = 0;
+    int sq = n*n;
+    while(n!=0){
+        n=n/10;
+        count++;
+    }
+    int power = (int) Math.pow(10,count);
+    if(sq%power == temp){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+public static void main(String[] args){
+    Main obj = new Main();
+    boolean ans = obj.CheckAutomorphic();
+    if(ans){
+        System.out.print("automorphic");
+    }
+    else{
+        System.out.print("Not automorphic");
+    }
+}
+}
+
+Output:
+7
+Not automorphic
