@@ -52,6 +52,58 @@ Money
 silver
 Gold
 
+// write a java program to check a specific number is perfect square or not by using function with no argument no return type.
+import java.util.*;
+class Main{
+    void ps(){
+        Scanner sc = new Scanner (System.in);
+        int n=sc.nextInt();
+        int flag=0;
+        for(int i=1;i<n;i++){
+            if(i*i==n){
+                flag=1;
+                System.out.println("Perfect Square");
+                break;
+            }
+        }
+        if(flag==0){
+            System.out.println("Not a perfect square");
+        }
+    }
+    public static void main(String args[]){
+        Main s=new Main();
+        s.ps();
+    }
+}
+
+Output:
+9
+Perfect Square
+// write a java program to check a specific number is power of 2 or not by using function with argument no return type.
+import java.util.*;
+class Main{
+    void powerOftwo(int n){
+        while(n%2==0){
+            n=n/2;
+        }
+        if(n==1){
+            System.out.println("Power Of Two");
+        } else {
+            System.out.println("Not a Power Of Two");
+        }
+    }
+    public static void main(String args[]){
+        Main s=new Main();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        s.powerOftwo(n);
+    }
+}
+
+Output:
+4
+Power Of Two
+
 
 //function with no arguments and with return type
 // syntax
@@ -106,3 +158,83 @@ public static void main(String[] args){
 Output:
 7
 Not automorphic
+
+// write a java program to check a specific number is perfect cube or not or not by using function with argument with return type.
+import java.util.*;
+class Main{
+    boolean percube(int n){
+        for(int i=1;i<=n/2;i++){
+            if(i*i*i==n){
+                return true;
+            }
+        }
+            return false;
+    }
+   public static void main(String args[]){
+       Main s=new Main();
+       Scanner sc = new Scanner (System.in);
+       int n=sc.nextInt();
+       boolean ans = s.percube(n);
+       if(ans){
+           System.out.println("Perfect Cube");
+       } else {
+           System.out.println("Not a Perfect Cube");
+       }
+   }
+}
+
+Output:
+64
+Perfect Cube
+
+//program to find the average of elements which are even and divisible by 3 and print the average with two decimal points.
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        float sum=0;
+        int count=0;
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+            if(arr[i]%2 == 0 && arr[i]%3 ==0){
+                sum+=arr[i];
+                count++;
+            }
+        }
+        System.out.printf("the avg is %.2f",sum/count);
+    }
+}
+
+Output:
+5
+2 4 6 18 24
+the avg is 16.00
+
+
+//program to find the power of a given number without using inbuilt method 
+import java.util.*;
+public class Main{
+    public int Power(int a, int b){
+        int pow=1;
+        int i=0;
+        for(i=0;i<b;i++){
+            pow*=a;
+        }
+        return pow;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        int m = sc.nextInt();
+        Main obj = new Main();
+        int res = obj.Power(n,m);
+        System.out.print("the power of "+ n + " power " + m + " is " + res);
+    }
+    }
+
+Output:
+2
+3
+the power of 2 power 3 is 8
