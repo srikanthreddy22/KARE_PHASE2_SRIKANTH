@@ -1,1 +1,53 @@
+// Hybrid Inheritance:
+    
+//   ----------- 
+//   | Class A  |
+//   |          |
+//  -|----------|------------
+// | |          |            |
+// | |  Class B | Class D    |   here we need to create two objects one for the Son and the other for the MOther
+// | |          |            |   the Son will be able to acess the A,B and C where as the D will help to access the 
+//  -|----------|------------     class D and also the class B
+//   |          |  
+//   | Class C  |
+//   |          |
+//   ------------
 
+class GrandFather{
+    void gen1(){
+        System.out.println("Money");
+    }
+}
+class Father extends GrandFather{
+    void gen21(){
+        System.out.println("Gold");
+    }
+}
+class Mother extends Father{
+    void gen22(){
+        System.out.println("silver");
+    }
+}
+class Son extends Father{
+    void gen3(){
+        System.out.println("Coins");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Son s = new Son();
+        Mother m = new Mother();
+        s.gen3();
+        s.gen21();
+        s.gen1();
+        m.gen22();
+        m.gen21();
+    }
+}
+
+Output:
+Coins
+Gold
+Money
+silver
+Gold
