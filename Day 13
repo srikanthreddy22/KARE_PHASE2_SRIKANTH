@@ -388,7 +388,7 @@ public static void main(String[] args){
 Output:
 6
 720
-
+example of the linear recursion is factorial
 // Linear Recursion
 import java.util.*;
 public class Main{
