@@ -48,3 +48,33 @@ public class Student{
 }
 Output:
 0 null
+
+
+import java.util.*;
+class Main{
+    static void add(int a, int b){
+        System.out.println(a+b);
+    }
+    static void add(int a,int b,int c){
+        System.out.println(a+b+c);
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        System.out.println("the sume of the first two numbes is ");
+        add(a,b);
+        System.out.println("the sume of the total three number is");
+        add(a,b,c);
+        
+    }
+}
+Output:
+5
+6
+7
+the sume of the first two numbes is 
+11
+the sume of the total three number is
+18
