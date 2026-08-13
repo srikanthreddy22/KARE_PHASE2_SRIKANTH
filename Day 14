@@ -104,7 +104,7 @@ p
 8 3.5
 3.5 p
 
-// by using the type of parameters we are Overloading the Method
+// by using the Order of parameters we are Overloading the Method
 import java.util.*;
 class Main{
     static void print(int a, float b){
