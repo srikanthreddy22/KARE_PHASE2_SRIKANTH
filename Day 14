@@ -33,3 +33,18 @@ public class Bike{
 }
 Output:
 Bike is started vuyy vuyy vuyyy
+
+import java.util.*;
+public class Student{
+    int rono;
+    String name;
+    Student(){
+        System.out.print(rono + " " + name);
+        
+    }
+    public static void main (String[] args) {
+        Student s = new Student();
+    }
+}
+Output:
+0 null
