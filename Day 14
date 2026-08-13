@@ -1,1 +1,23 @@
+// WRITE A JAVA PROGRAM TO FIND THE NTH TERM OF THE FIBONACCI SERIES USING RECURSION
+import java.util.*;
+public class Main{
+    static int Fib(int n){
+        if(n == 0 || n == 1){
+            return n;
+        }
+        else{
+            return Fib(n-1) + Fib(n-2);
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++){
+        System.out.print(Fib(i)+" ");
+        }
+    }
+}
 
+Output:
+8
+0 1 1 2 3 5 8 13 
