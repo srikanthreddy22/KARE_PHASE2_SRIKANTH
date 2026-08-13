@@ -49,7 +49,7 @@ public class Student{
 Output:
 0 null
 
-
+// by using the number of parameters we are OverlOading the Method
 import java.util.*;
 class Main{
     static void add(int a, int b){
@@ -78,3 +78,28 @@ the sume of the first two numbes is
 11
 the sume of the total three number is
 18
+
+// by using the type of parameters we are Overloading the Method
+import java.util.*;
+class Main{
+    static void print(int a, float b){
+        System.out.println(a+" "+b);
+    }
+    static void print(float b,char c){
+        System.out.println(b+" "+ c);
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        float b = sc.nextFloat();
+        char c = sc.next().charAt(0);
+        print(a,b);
+        print(b,c);
+    }
+}
+Output:
+8
+3.5
+p
+8 3.5
+3.5 p
