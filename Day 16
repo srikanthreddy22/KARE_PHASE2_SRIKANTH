@@ -1,268 +1,677 @@
+//1) CREATING A DOUBLY LINKED LIST
 import java.util.*;
-class Stack {
-	int top;
-	int arr[];
-	int n;
-	Stack(int n) {
-		this.n=n;
-		this.top=-1;
-		arr = new int[n];
-	}
-	void push(int d) {
-		if(top==n-1) {
-			System.out.print("Over flow");
-			return;
-		}
-		arr[++top]=d;
-		return;
-	}
-	void pop() {
-		if(top==-1) {
-			System.out.print("Under flow");
-			return;
-		}
-		System.out.print(arr[top--]);
-		return;
-	}
-	void peek() {
-		if(top==-1) {
-			System.out.println("Under flow");
-			return;
-		}
-		System.out.print(arr[top]);
-		return;
-	}
-	void display() {
-		if(top==-1) {
-			System.out.println("Stack is empty");
-			return;
-		}
-		for(int i=top; i>=0; i--) {
-			System.out.print(arr[i]+" ");
-		}
-		return;
-	}
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
 }
 class Main {
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		Stack s = new Stack(n);
-		System.out.println("1.push");
-		System.out.println("2.pop");
-		System.out.println("3.peek");
-		System.out.println("4.display");
-		System.out.println("5.exit");
-		System.out.println("Enter a choice");
-		while(true) {
-		    int a=sc.nextInt();
-			switch(a) {
-			case 1: {
-				int d=sc.nextInt();
-				s.push(d);
-				break;
-			}
-			case 2: {
-				s.pop();
-				break;
-			}
-			case 3: {
-				s.peek();
-				break;
-			}
-			case 4: {
-				s.display();
-				break;
-			}
-			case 5: {
-				System.out.println("Exit");
-				return;
-			}
-			default:
-				System.out.print("Invalid");
-			}
-		}
-	}
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
 }
-//output:
-5
-1.push
-2.pop
-3.peek
-4.display
-5.exit
-Enter a choice
-3
-Under flow
-1
-90
-1
-89
-1
-56
-167
-Invalid4
-56 89 90 5
-Exit
-//queue with array
+//2)sum of elements in double linked list
 import java.util.*;
-class Queue{
-    int front,rear;
-    int n;
-    int queue[];
-    Queue(int n){
-        this.n=n;
-        queue=new int[n];
-        front=0;
-        rear=-1;
-    }
-    void enqueue(int data){
-        if(rear==n-1){
-            System.out.println("Queue is full");
-            return;
-        }
-        rear++;
-        queue[rear]=data;
-    }
-    int dequeue(){
-        if(front >front){
-            System.out.print("Queue is empty");
-            return -1;
-        }
-        return queue[front++];
-    }
-    void display(){
-        if(front>rear){
-            System.out.println("Queue is empty");
-            return;
-        }
-        for(int i=front;i<=rear;i++){
-            System.out.print(queue[i]+" ");
-        }
-        System.out.println();
-        return;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
     }
 }
-public class Main{
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        Queue q=new Queue(n);
-        while(true){
-            System.out.println("\n1.enqueue");
-            System.out.println("\n2.dequeue");
-            System.out.println("\n3.display");
-            System.out.println("\n4.exit");
-            int s=sc.nextInt();
-            switch(s){
-                case 1:{
-                    int b=sc.nextInt();
-                    q.enqueue(b);
-                    break;
-                }
-                case 2:{
-                    q.dequeue();
-                    break;
-                }
-                case 3:{
-                    q.display();
-                    break;
-                }
-                case 4:{
-                    return;
-                }
-                default:
-                System.out.println("invalid credentials");
-            }
-            
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+       int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.display();
+        System.out.println("\nSum = " + m.sum());
+    }
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            return;
+        }
+
+        Node temp = first;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = n;
+        n.prev = temp;
+    }
+
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
         }
     }
-}//output:
-5
 
-1.enqueue
+    int sum() {
+        int total = 0;
+        Node temp = first;
 
-2.dequeue
+        while (temp != null) {
+            total += temp.data;
+            temp = temp.next;
+        }
 
-3.display
+        return total;
+    }
+}
+//3)max element in double linked list
+import java.util.*;
 
-4.exit
-1
-1
+class Node {
+    int data;
+    Node next, prev;
 
-1.enqueue
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
 
-2.dequeue
+class Main {
+    Node first;
 
-3.display
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
 
-4.exit
-1
-2
+        int d = sc.nextInt();
 
-1.enqueue
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
 
-2.dequeue
+        m.display();
+        System.out.println("\nMaximum = " + m.max());
+    }
 
-3.display
+    void insert(int d) {
+        Node n = new Node(d);
 
-4.exit
-1
-2 3
+        if (first == null) {
+            first = n;
+            return;
+        }
 
-1.enqueue
+        Node temp = first;
 
-2.dequeue
+        while (temp.next != null) {
+            temp = temp.next;
+        }
 
-3.display
+        temp.next = n;
+        n.prev = temp;
+    }
 
-4.exit
-1
-4
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
 
-1.enqueue
+        Node temp = first;
 
-2.dequeue
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
 
-3.display
+    int max() {
+        Node temp = first;
+        int maximum = temp.data;
 
-4.exit
-1
-5
+        while (temp != null) {
+            if (temp.data > maximum) {
+                maximum = temp.data;
+            }
+            temp = temp.next;
+        }
 
-1.enqueue
+        return maximum;
+    }
+}
+//4)reverse the element in double linked list
+import java.util.*;
 
-2.dequeue
+class Node {
+    int data;
+    Node next, prev;
 
-3.display
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
 
-4.exit
-3
-1 2 3 4 5 
+class Main {
+    Node first;
 
-1.enqueue
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
 
-2.dequeue
+        int d = sc.nextInt();
 
-3.display
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
 
-4.exit
-2
+        m.displayReverse();
+    }
 
-1.enqueue
+    void insert(int d) {
+        Node n = new Node(d);
 
-2.dequeue
+        if (first == null) {
+            first = n;
+            return;
+        }
 
-3.display
+        Node temp = first;
 
-4.exit
-3
-2 3 4 5 
+        while (temp.next != null) {
+            temp = temp.next;
+        }
 
-1.enqueue
+        temp.next = n;
+        n.prev = temp;
+    }
 
-2.dequeue
+    void displayReverse() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
 
-3.display
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.prev;
+        }
+    }
+}
+//5)sort the element in double linked list
+import java.util.*;
 
-4.exit
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class Main {
+    Node first;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.sort();
+        m.display();
+    }
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            return;
+        }
+
+        Node temp = first;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = n;
+        n.prev = temp;
+    }
+
+    void sort() {
+        if (first == null) {
+            return;
+        }
+
+        Node i = first;
+
+        while (i != null) {
+            Node j = i.next;
+
+            while (j != null) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+
+                j = j.next;
+            }
+
+            i = i.next;
+        }
+    }
+
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
+//6)insert new element in double linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        data = d;
+        next = null;
+        prev = null;
+    }
+}
+
+class Main {
+    Node first;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        int value = sc.nextInt();
+        int position = sc.nextInt();
+
+        m.insertAtPosition(value, position);
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            return;
+        }
+
+        Node temp = first;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = n;
+        n.prev = temp;
+    }
+
+    
+    void insertAtPosition(int value, int position) {
+        Node n = new Node(value);
+
+        
+        if (position == 1) {
+            n.next = first;
+            if (first != null) {
+                first.prev = n;
+            }
+            first = n;
+            return;
+        }
+
+        Node temp = first;
+
+        
+        for (int i = 1; i < position - 1 && temp != null; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            System.out.println("Invalid position");
+            return;
+        }
+
+        n.next = temp.next;
+        n.prev = temp;
+
+        if (temp.next != null) {
+            temp.next.prev = n;
+        }
+
+        temp.next = n;
+    }
+
+    void display() {
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
+7
+// DELETE ELEMENT FROM A DOUBLY LINKED LIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        int element = sc.nextInt();
+        m.delete(element);
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void delete(int element) {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null && temp.data != element) {
+            temp = temp.next;
+        }
+        if (temp == null) {
+            System.out.println("Element not found");
+            return;
+        }
+        if (temp.prev != null) {
+            temp.prev.next = temp.next;
+        } else {
+            first = temp.next;
+        }
+        if (temp.next != null) {
+            temp.next.prev = temp.prev;
+        }
+    }
+    void display() {
+        Node temp = first;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
+
+8
+// MINIMUM ELEMENT IN A DOUBLY LINKED LIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.minimum();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void minimum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        int min = first.data;
+        Node temp = first.next;
+        while (temp != null) {
+            if (temp.data < min) {
+                min = temp.data;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Minimum = " + min);
+    }
+}
+
+9
+// COUNT NUMBER OF NODES IN A DOUBLY LINKED LIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.count();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void count() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        int count = 0;
+        Node temp = first;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        System.out.println("Number of nodes = " + count);
+    }
+}
+
+10
+// SEARCH ELEMENT IN A DOUBLY LINKED LIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        int element = sc.nextInt();
+        m.search(element);
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void search(int element) {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null) {
+            if (temp.data == element) {
+                System.out.println("Element Found");
+                return;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Element not found");
+    }
+}
