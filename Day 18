@@ -92,3 +92,60 @@ Output:
 2
 200
 [10, 100, 200, 30, 40, 50]
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        LinkedList obj = new LinkedList();
+        obj.add(10);
+        obj.add(20);
+        obj.add(30);
+        System.out.print(obj);
+    }
+}
+
+Output:
+[10, 20, 30]
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        LinkedList obj = new LinkedList();
+        int i;
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        for(i=0;i<n;i++){
+            obj.add(sc.nextInt());
+        }
+        System.out.print("LinkedList elements");
+        System.out.print(obj);
+        int ind = sc.nextInt();
+        int val = sc.nextInt();
+        obj.add(ind,val);
+        System.out.println(obj);
+        System.out.println("Insert at the first position");
+        System.out.println("enter the first element to be added");
+        int d =sc.nextInt();
+        obj.addFirst(d);
+        System.out.println(obj);
+        System.out.println("Enter the last element to be added");
+        d = sc.nextInt();
+        obj.addLast(d);
+        System.out.println(obj);
+    }
+}
+
+Output:
+5
+10 20 30 40 50  
+LinkedList elements[10, 20, 30, 40, 50]3
+300
+[10, 20, 30, 300, 40, 50]
+Insert at the first position
+enter the first element to be added
+56
+[56, 10, 20, 30, 300, 40, 50]
+Enter the last element to be added
+89
+[56, 10, 20, 30, 300, 40, 50, 89]
